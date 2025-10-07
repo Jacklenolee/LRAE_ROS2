@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>sensor_conversion</name>
+  <version>0.0.0</version>
+  <description>The sensor_conversion package</description>
+
+  <maintainer email="hjl@todo.todo">hjl</maintainer>
+  <license>TODO</license>
+
+  <!-- 依赖 ament_cmake 作为构建工具 -->
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <!-- 构建依赖 -->
+  <depend>rclcpp</depend>
+  <depend>geometry_msgs</depend>
+  <depend>message_filters</depend>
+  <depend>nav_msgs</depend>
+  <depend>pcl_ros</depend>
+  <depend>sensor_msgs</depend>
+  <depend>std_msgs</depend>
+  <depend>tf2</depend>
+  <depend>tf2_ros</depend>
+  <depend>tf2_geometry_msgs</depend>
+
+  <!-- 运行时依赖 -->
+  <exec_depend>rclcpp</exec_depend>
+  <exec_depend>geometry_msgs</exec_depend>
+  <exec_depend>message_filters</exec_depend>
+  <exec_depend>nav_msgs</exec_depend>
+  <exec_depend>pcl_ros</exec_depend>
+  <exec_depend>sensor_msgs</exec_depend>
+  <exec_depend>std_msgs</exec_depend>
+  <exec_depend>tf2</exec_depend>
+  <exec_depend>tf2_ros</exec_depend>
+  <exec_depend>tf2_geometry_msgs</exec_depend>
+
+  <!-- 导出 ament_package -->
+  <export>
+
+  </export>
+</package>

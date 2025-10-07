@@ -1,0 +1,440 @@
+[0.000000] (-) TimerEvent: {}
+[0.000753] (fitplane) JobQueued: {'identifier': 'fitplane', 'dependencies': OrderedDict()}
+[0.000814] (gen_local_goal) JobQueued: {'identifier': 'gen_local_goal', 'dependencies': OrderedDict()}
+[0.000834] (local_planner) JobQueued: {'identifier': 'local_planner', 'dependencies': OrderedDict()}
+[0.000885] (lrae_planner) JobQueued: {'identifier': 'lrae_planner', 'dependencies': OrderedDict()}
+[0.000903] (scout_control) JobQueued: {'identifier': 'scout_control', 'dependencies': OrderedDict()}
+[0.000967] (scout_description) JobQueued: {'identifier': 'scout_description', 'dependencies': OrderedDict()}
+[0.000985] (sensor_conversion) JobQueued: {'identifier': 'sensor_conversion', 'dependencies': OrderedDict()}
+[0.001033] (simworld) JobQueued: {'identifier': 'simworld', 'dependencies': OrderedDict()}
+[0.001050] (scout_gazebo_sim) JobQueued: {'identifier': 'scout_gazebo_sim', 'dependencies': OrderedDict([('scout_description', '/home/jacklenolee/LRAE_WS/install/scout_description')])}
+[0.001102] (scout_description) JobStarted: {'identifier': 'scout_description'}
+[0.010689] (fitplane) JobStarted: {'identifier': 'fitplane'}
+[0.013996] (gen_local_goal) JobStarted: {'identifier': 'gen_local_goal'}
+[0.017484] (local_planner) JobStarted: {'identifier': 'local_planner'}
+[0.023783] (scout_description) JobProgress: {'identifier': 'scout_description', 'progress': 'cmake'}
+[0.024440] (scout_description) Command: {'cmd': ['/usr/bin/cmake', '/home/jacklenolee/LRAE_WS/src/LRAE-ROS2/scout_simulator/scout_description', '-DCATKIN_INSTALL_INTO_PREFIX_ROOT=0', '-DCMAKE_INSTALL_PREFIX=/home/jacklenolee/LRAE_WS/install/scout_description'], 'cwd': '/home/jacklenolee/LRAE_WS/build/scout_description', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('LANGUAGE', 'zh_CN:zh'), ('USER', 'jacklenolee'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/jacklenolee'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('DBUS_STARTER_BUS_TYPE', 'session'), ('SYSTEMD_EXEC_PID', '1191'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus,guid=7b64c2aaa005d09a6beb689267a5c19c'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'jacklenolee'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'jacklenolee'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/jacklenolee-virtual-machine:@/tmp/.ICE-unix/1191,unix/jacklenolee-virtual-machine:/tmp/.ICE-unix/1191'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/2c262367_8695_4a44_9535_ce7cc32e49cc'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'zh_CN.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.ZVGG12'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.235'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/jacklenolee/LRAE_WS/build/scout_description'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('DBUS_STARTER_ADDRESS', 'unix:path=/run/user/1000/bus,guid=7b64c2aaa005d09a6beb689267a5c19c'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800')]), 'shell': False}
+[0.031672] (fitplane) JobProgress: {'identifier': 'fitplane', 'progress': 'cmake'}
+[0.031752] (fitplane) Command: {'cmd': ['/usr/bin/cmake', '/home/jacklenolee/LRAE_WS/src/LRAE-ROS2/fitplane', '-DCMAKE_INSTALL_PREFIX=/home/jacklenolee/LRAE_WS/install/fitplane'], 'cwd': '/home/jacklenolee/LRAE_WS/build/fitplane', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('LANGUAGE', 'zh_CN:zh'), ('USER', 'jacklenolee'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/jacklenolee'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('DBUS_STARTER_BUS_TYPE', 'session'), ('SYSTEMD_EXEC_PID', '1191'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus,guid=7b64c2aaa005d09a6beb689267a5c19c'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'jacklenolee'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'jacklenolee'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/jacklenolee-virtual-machine:@/tmp/.ICE-unix/1191,unix/jacklenolee-virtual-machine:/tmp/.ICE-unix/1191'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/2c262367_8695_4a44_9535_ce7cc32e49cc'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'zh_CN.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.ZVGG12'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.235'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/jacklenolee/LRAE_WS/build/fitplane'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('DBUS_STARTER_ADDRESS', 'unix:path=/run/user/1000/bus,guid=7b64c2aaa005d09a6beb689267a5c19c'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[0.032911] (gen_local_goal) JobProgress: {'identifier': 'gen_local_goal', 'progress': 'cmake'}
+[0.034061] (gen_local_goal) Command: {'cmd': ['/usr/bin/cmake', '/home/jacklenolee/LRAE_WS/src/LRAE-ROS2/gen_local_goal', '-DCATKIN_INSTALL_INTO_PREFIX_ROOT=0', '-DCMAKE_INSTALL_PREFIX=/home/jacklenolee/LRAE_WS/install/gen_local_goal'], 'cwd': '/home/jacklenolee/LRAE_WS/build/gen_local_goal', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('LANGUAGE', 'zh_CN:zh'), ('USER', 'jacklenolee'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/jacklenolee'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('DBUS_STARTER_BUS_TYPE', 'session'), ('SYSTEMD_EXEC_PID', '1191'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus,guid=7b64c2aaa005d09a6beb689267a5c19c'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'jacklenolee'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'jacklenolee'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/jacklenolee-virtual-machine:@/tmp/.ICE-unix/1191,unix/jacklenolee-virtual-machine:/tmp/.ICE-unix/1191'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/2c262367_8695_4a44_9535_ce7cc32e49cc'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'zh_CN.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.ZVGG12'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.235'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/jacklenolee/LRAE_WS/build/gen_local_goal'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('DBUS_STARTER_ADDRESS', 'unix:path=/run/user/1000/bus,guid=7b64c2aaa005d09a6beb689267a5c19c'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800')]), 'shell': False}
+[0.039894] (local_planner) JobProgress: {'identifier': 'local_planner', 'progress': 'cmake'}
+[0.039934] (local_planner) Command: {'cmd': ['/usr/bin/cmake', '/home/jacklenolee/LRAE_WS/src/LRAE-ROS2/local_planner', '-DCMAKE_INSTALL_PREFIX=/home/jacklenolee/LRAE_WS/install/local_planner'], 'cwd': '/home/jacklenolee/LRAE_WS/build/local_planner', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('LANGUAGE', 'zh_CN:zh'), ('USER', 'jacklenolee'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/jacklenolee'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('DBUS_STARTER_BUS_TYPE', 'session'), ('SYSTEMD_EXEC_PID', '1191'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus,guid=7b64c2aaa005d09a6beb689267a5c19c'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'jacklenolee'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'jacklenolee'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/jacklenolee-virtual-machine:@/tmp/.ICE-unix/1191,unix/jacklenolee-virtual-machine:/tmp/.ICE-unix/1191'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/2c262367_8695_4a44_9535_ce7cc32e49cc'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'zh_CN.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.ZVGG12'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.235'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/jacklenolee/LRAE_WS/build/local_planner'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('DBUS_STARTER_ADDRESS', 'unix:path=/run/user/1000/bus,guid=7b64c2aaa005d09a6beb689267a5c19c'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[0.064665] (scout_description) StderrLine: {'line': b'\x1b[0mCMake Deprecation Warning at CMakeLists.txt:1 (cmake_minimum_required):\n'}
+[0.064863] (scout_description) StderrLine: {'line': b'  Compatibility with CMake < 2.8.12 will be removed from a future version of\n'}
+[0.064931] (scout_description) StderrLine: {'line': b'  CMake.\n'}
+[0.064980] (scout_description) StderrLine: {'line': b'\n'}
+[0.065024] (scout_description) StderrLine: {'line': b'  Update the VERSION argument <min> value or use a ...<max> suffix to tell\n'}
+[0.065065] (scout_description) StderrLine: {'line': b'  CMake that the project does not need compatibility with older versions.\n'}
+[0.065106] (scout_description) StderrLine: {'line': b'\n'}
+[0.065145] (scout_description) StderrLine: {'line': b'\x1b[0m\n'}
+[0.098987] (-) TimerEvent: {}
+[0.199643] (-) TimerEvent: {}
+[0.266423] (scout_description) StdoutLine: {'line': b'-- The C compiler identification is GNU 11.4.0\n'}
+[0.267431] (fitplane) StdoutLine: {'line': b'-- The C compiler identification is GNU 11.4.0\n'}
+[0.267566] (gen_local_goal) StdoutLine: {'line': b'-- The C compiler identification is GNU 11.4.0\n'}
+[0.267644] (local_planner) StdoutLine: {'line': b'-- The C compiler identification is GNU 11.4.0\n'}
+[0.299766] (-) TimerEvent: {}
+[0.401071] (-) TimerEvent: {}
+[0.466974] (fitplane) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 11.4.0\n'}
+[0.467146] (local_planner) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 11.4.0\n'}
+[0.467728] (gen_local_goal) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 11.4.0\n'}
+[0.483132] (local_planner) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[0.483329] (gen_local_goal) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[0.483917] (fitplane) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[0.499177] (scout_description) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 11.4.0\n'}
+[0.503999] (-) TimerEvent: {}
+[0.509079] (scout_description) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[0.602457] (fitplane) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[0.605210] (-) TimerEvent: {}
+[0.605697] (local_planner) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[0.608726] (scout_description) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[0.612978] (local_planner) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[0.613234] (local_planner) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[0.613439] (local_planner) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[0.614641] (fitplane) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[0.616138] (fitplane) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[0.616227] (fitplane) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[0.617408] (local_planner) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[0.620464] (scout_description) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[0.621021] (fitplane) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[0.621160] (scout_description) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[0.621673] (scout_description) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[0.625442] (scout_description) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[0.633400] (gen_local_goal) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[0.642806] (gen_local_goal) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[0.643719] (gen_local_goal) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[0.644299] (gen_local_goal) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[0.648203] (gen_local_goal) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[0.706334] (-) TimerEvent: {}
+[0.755809] (scout_description) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[0.762132] (scout_description) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[0.762693] (scout_description) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[0.763498] (scout_description) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[0.773163] (local_planner) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[0.775704] (fitplane) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[0.782907] (scout_description) StderrLine: {'line': b'\x1b[31mCMake Error at CMakeLists.txt:4 (find_package):\n'}
+[0.783075] (scout_description) StderrLine: {'line': b'  By not providing "Findcatkin.cmake" in CMAKE_MODULE_PATH this project has\n'}
+[0.783129] (scout_description) StderrLine: {'line': b'  asked CMake to find a package configuration file provided by "catkin", but\n'}
+[0.783176] (scout_description) StderrLine: {'line': b'  CMake did not find one.\n'}
+[0.783219] (scout_description) StderrLine: {'line': b'\n'}
+[0.783262] (scout_description) StderrLine: {'line': b'  Could not find a package configuration file provided by "catkin" with any\n'}
+[0.783302] (scout_description) StderrLine: {'line': b'  of the following names:\n'}
+[0.783341] (scout_description) StderrLine: {'line': b'\n'}
+[0.783468] (scout_description) StderrLine: {'line': b'    catkinConfig.cmake\n'}
+[0.783521] (scout_description) StderrLine: {'line': b'    catkin-config.cmake\n'}
+[0.783565] (scout_description) StderrLine: {'line': b'\n'}
+[0.783606] (scout_description) StderrLine: {'line': b'  Add the installation prefix of "catkin" to CMAKE_PREFIX_PATH or set\n'}
+[0.783648] (scout_description) StderrLine: {'line': b'  "catkin_DIR" to a directory containing one of the above files.  If "catkin"\n'}
+[0.783699] (scout_description) StderrLine: {'line': b'  provides a separate development package or SDK, be sure it has been\n'}
+[0.783742] (scout_description) StderrLine: {'line': b'  installed.\n'}
+[0.783936] (scout_description) StderrLine: {'line': b'\n'}
+[0.783992] (scout_description) StderrLine: {'line': b'\x1b[0m\n'}
+[0.784091] (scout_description) StdoutLine: {'line': b'-- Configuring incomplete, errors occurred!\n'}
+[0.784153] (scout_description) StdoutLine: {'line': b'See also "/home/jacklenolee/LRAE_WS/build/scout_description/CMakeFiles/CMakeOutput.log".\n'}
+[0.784513] (local_planner) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[0.784637] (local_planner) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[0.784691] (local_planner) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[0.784897] (fitplane) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[0.785263] (fitplane) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[0.787101] (fitplane) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[0.789781] (scout_description) CommandEnded: {'returncode': 1}
+[0.795858] (gen_local_goal) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[0.796080] (fitplane) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[0.796149] (local_planner) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[0.797845] (gen_local_goal) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[0.798041] (gen_local_goal) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[0.798503] (gen_local_goal) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[0.800500] (gen_local_goal) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[0.806664] (-) TimerEvent: {}
+[0.824203] (scout_description) JobEnded: {'identifier': 'scout_description', 'rc': 1}
+[0.907562] (-) TimerEvent: {}
+[0.968843] (local_planner) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter \n'}
+[0.971706] (gen_local_goal) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter \n'}
+[0.983517] (fitplane) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter \n'}
+[1.009047] (-) TimerEvent: {}
+[1.090019] (fitplane) StdoutLine: {'line': b'-- Found rclcpp: 16.0.11 (/opt/ros/humble/share/rclcpp/cmake)\n'}
+[1.090471] (local_planner) StdoutLine: {'line': b'-- Found rclcpp: 16.0.11 (/opt/ros/humble/share/rclcpp/cmake)\n'}
+[1.090655] (gen_local_goal) StdoutLine: {'line': b'-- Found rclcpp: 16.0.11 (/opt/ros/humble/share/rclcpp/cmake)\n'}
+[1.109525] (-) TimerEvent: {}
+[1.160387] (gen_local_goal) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.6 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[1.160690] (fitplane) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.6 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[1.160766] (local_planner) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.6 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[1.168357] (gen_local_goal) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.6 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[1.168769] (fitplane) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.6 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[1.169020] (local_planner) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.6 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[1.181925] (fitplane) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.6 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[1.182145] (local_planner) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.6 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[1.182224] (gen_local_goal) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.6 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[1.202599] (fitplane) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[1.203029] (gen_local_goal) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[1.203116] (local_planner) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[1.209902] (-) TimerEvent: {}
+[1.224580] (local_planner) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[1.224777] (fitplane) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[1.225103] (gen_local_goal) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[1.292416] (fitplane) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)\n'}
+[1.292777] (local_planner) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)\n'}
+[1.292938] (gen_local_goal) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)\n'}
+[1.297359] (local_planner) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 6.2.7 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)\n'}
+[1.297495] (fitplane) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 6.2.7 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)\n'}
+[1.297657] (gen_local_goal) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 6.2.7 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)\n'}
+[1.310142] (-) TimerEvent: {}
+[1.411031] (-) TimerEvent: {}
+[1.422684] (gen_local_goal) StdoutLine: {'line': b'-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  \n'}
+[1.423035] (fitplane) StdoutLine: {'line': b'-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  \n'}
+[1.423121] (local_planner) StdoutLine: {'line': b'-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  \n'}
+[1.453166] (gen_local_goal) StdoutLine: {'line': b'-- Found FastRTPS: /opt/ros/humble/include  \n'}
+[1.453353] (local_planner) StdoutLine: {'line': b'-- Found FastRTPS: /opt/ros/humble/include  \n'}
+[1.453430] (fitplane) StdoutLine: {'line': b'-- Found FastRTPS: /opt/ros/humble/include  \n'}
+[1.497178] (fitplane) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[1.497633] (gen_local_goal) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[1.501010] (local_planner) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[1.510632] (local_planner) StdoutLine: {'line': b'-- Looking for pthread.h\n'}
+[1.510795] (gen_local_goal) StdoutLine: {'line': b'-- Looking for pthread.h\n'}
+[1.510931] (fitplane) StdoutLine: {'line': b'-- Looking for pthread.h\n'}
+[1.511106] (-) TimerEvent: {}
+[1.613046] (-) TimerEvent: {}
+[1.626992] (fitplane) StdoutLine: {'line': b'-- Looking for pthread.h - found\n'}
+[1.627166] (fitplane) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD\n'}
+[1.649003] (local_planner) StdoutLine: {'line': b'-- Looking for pthread.h - found\n'}
+[1.649223] (local_planner) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD\n'}
+[1.661965] (gen_local_goal) StdoutLine: {'line': b'-- Looking for pthread.h - found\n'}
+[1.662489] (gen_local_goal) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD\n'}
+[1.713936] (-) TimerEvent: {}
+[1.739394] (fitplane) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success\n'}
+[1.740812] (fitplane) StdoutLine: {'line': b'-- Found Threads: TRUE  \n'}
+[1.761169] (gen_local_goal) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success\n'}
+[1.762114] (gen_local_goal) StdoutLine: {'line': b'-- Found Threads: TRUE  \n'}
+[1.814180] (-) TimerEvent: {}
+[1.819797] (fitplane) StdoutLine: {'line': b'-- Found geometry_msgs: 4.2.4 (/opt/ros/humble/share/geometry_msgs/cmake)\n'}
+[1.826317] (gen_local_goal) StdoutLine: {'line': b'-- Found nav_msgs: 4.2.4 (/opt/ros/humble/share/nav_msgs/cmake)\n'}
+[1.837171] (local_planner) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success\n'}
+[1.838495] (local_planner) StdoutLine: {'line': b'-- Found Threads: TRUE  \n'}
+[1.842006] (fitplane) StdoutLine: {'line': b'-- Found nav_msgs: 4.2.4 (/opt/ros/humble/share/nav_msgs/cmake)\n'}
+[1.865075] (fitplane) StdoutLine: {'line': b'-- Found tf2: 0.25.11 (/opt/ros/humble/share/tf2/cmake)\n'}
+[1.865266] (gen_local_goal) StdoutLine: {'line': b'-- Found tf2: 0.25.11 (/opt/ros/humble/share/tf2/cmake)\n'}
+[1.880146] (gen_local_goal) StdoutLine: {'line': b'-- Found tf2_ros: 0.25.11 (/opt/ros/humble/share/tf2_ros/cmake)\n'}
+[1.896361] (local_planner) StdoutLine: {'line': b'-- Found nav_msgs: 4.2.4 (/opt/ros/humble/share/nav_msgs/cmake)\n'}
+[1.897303] (fitplane) StdoutLine: {'line': b"-- Checking for module 'eigen3'\n"}
+[1.914535] (-) TimerEvent: {}
+[1.915711] (fitplane) StdoutLine: {'line': b'--   Found eigen3, version 3.4.0\n'}
+[1.937662] (local_planner) StdoutLine: {'line': b'-- Found sensor_msgs: 4.2.4 (/opt/ros/humble/share/sensor_msgs/cmake)\n'}
+[1.963427] (local_planner) StdoutLine: {'line': b'-- Found tf2_ros: 0.25.11 (/opt/ros/humble/share/tf2_ros/cmake)\n'}
+[1.973402] (fitplane) StdoutLine: {'line': b'-- Found Eigen: /usr/include/eigen3 (Required is at least version "3.1") \n'}
+[1.973663] (fitplane) StdoutLine: {'line': b'-- Eigen found (include: /usr/include/eigen3, version: 3.4.0)\n'}
+[2.006751] (fitplane) StdoutLine: {'line': b'-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found suitable version "1.74.0", minimum required is "1.65.0") found components: system filesystem date_time iostreams serialization \n'}
+[2.017881] (-) TimerEvent: {}
+[2.028953] (fitplane) StdoutLine: {'line': b"-- Checking for module 'flann'\n"}
+[2.049779] (fitplane) StdoutLine: {'line': b'--   Found flann, version 1.9.1\n'}
+[2.064271] (local_planner) StdoutLine: {'line': b'-- Found tf2_geometry_msgs: 0.25.11 (/opt/ros/humble/share/tf2_geometry_msgs/cmake)\n'}
+[2.081888] (local_planner) StdoutLine: {'line': b'-- Found eigen3_cmake_module: 0.1.1 (/opt/ros/humble/share/eigen3_cmake_module/cmake)\n'}
+[2.085353] (local_planner) StdoutLine: {'line': b'-- Found Eigen3: TRUE (found version "3.4.0") \n'}
+[2.085500] (local_planner) StdoutLine: {'line': b'-- Ensuring Eigen3 include directory is part of orocos-kdl CMake target\n'}
+[2.087345] (local_planner) StdoutLine: {'line': b'-- Found pcl_conversions: 2.4.5 (/opt/ros/humble/share/pcl_conversions/cmake)\n'}
+[2.093021] (gen_local_goal) StdoutLine: {'line': b'-- Configuring done\n'}
+[2.110765] (fitplane) StdoutLine: {'line': b'-- Found FLANN: /usr/lib/x86_64-linux-gnu/libflann_cpp.so  \n'}
+[2.110934] (fitplane) StdoutLine: {'line': b'-- FLANN found (include: /usr/include, lib: /usr/lib/x86_64-linux-gnu/libflann_cpp.so)\n'}
+[2.111844] (gen_local_goal) StdoutLine: {'line': b'-- Generating done\n'}
+[2.112938] (gen_local_goal) StderrLine: {'line': b'\x1b[33mCMake Warning:\n'}
+[2.113048] (gen_local_goal) StderrLine: {'line': b'  Manually-specified variables were not used by the project:\n'}
+[2.113102] (gen_local_goal) StderrLine: {'line': b'\n'}
+[2.113149] (gen_local_goal) StderrLine: {'line': b'    CATKIN_INSTALL_INTO_PREFIX_ROOT\n'}
+[2.113194] (gen_local_goal) StderrLine: {'line': b'\n'}
+[2.113306] (gen_local_goal) StderrLine: {'line': b'\x1b[0m\n'}
+[2.116792] (gen_local_goal) StdoutLine: {'line': b'-- Build files have been written to: /home/jacklenolee/LRAE_WS/build/gen_local_goal\n'}
+[2.118273] (-) TimerEvent: {}
+[2.129827] (gen_local_goal) JobEnded: {'identifier': 'gen_local_goal', 'rc': 'SIGINT'}
+[2.131273] (local_planner) StdoutLine: {'line': b"-- Checking for module 'eigen3'\n"}
+[2.150716] (local_planner) StdoutLine: {'line': b'--   Found eigen3, version 3.4.0\n'}
+[2.154248] (fitplane) StdoutLine: {'line': b'-- Found GLEW: /usr/lib/x86_64-linux-gnu/libGLEW.so  \n'}
+[2.166381] (fitplane) StdoutLine: {'line': b'-- Found OpenGL: /usr/lib/x86_64-linux-gnu/libOpenGL.so  found components: OpenGL GLX \n'}
+[2.204989] (local_planner) StdoutLine: {'line': b'-- Found Eigen: /usr/include/eigen3 (Required is at least version "3.1") \n'}
+[2.205181] (local_planner) StdoutLine: {'line': b'-- Eigen found (include: /usr/include/eigen3, version: 3.4.0)\n'}
+[2.218975] (-) TimerEvent: {}
+[2.238944] (local_planner) StdoutLine: {'line': b"-- Checking for module 'flann'\n"}
+[2.258118] (local_planner) StdoutLine: {'line': b'--   Found flann, version 1.9.1\n'}
+[2.319061] (-) TimerEvent: {}
+[2.323642] (local_planner) StdoutLine: {'line': b'-- Found FLANN: /usr/lib/x86_64-linux-gnu/libflann_cpp.so  \n'}
+[2.323922] (local_planner) StdoutLine: {'line': b'-- FLANN found (include: /usr/include, lib: /usr/lib/x86_64-linux-gnu/libflann_cpp.so)\n'}
+[2.358611] (fitplane) StdoutLine: {'line': b'-- Found MPI_C: /usr/lib/x86_64-linux-gnu/libmpi.so (found version "3.1") \n'}
+[2.358960] (fitplane) StdoutLine: {'line': b'-- Found MPI: TRUE (found version "3.1") found components: C \n'}
+[2.362339] (fitplane) StdoutLine: {'line': b'-- Found JsonCpp: /usr/lib/x86_64-linux-gnu/libjsoncpp.so (found suitable version "1.9.5", minimum required is "0.7.0") \n'}
+[2.371722] (fitplane) StdoutLine: {'line': b'-- Found ZLIB: /usr/lib/x86_64-linux-gnu/libz.so (found version "1.2.11") \n'}
+[2.388487] (fitplane) StdoutLine: {'line': b'-- Found PNG: /usr/lib/x86_64-linux-gnu/libpng.so (found version "1.6.37") \n'}
+[2.419468] (-) TimerEvent: {}
+[2.424788] (fitplane) StdoutLine: {'line': b'-- Found Eigen3: /usr/include/eigen3 (found version "3.4.0") \n'}
+[2.519959] (-) TimerEvent: {}
+[2.543848] (fitplane) StdoutLine: {'line': b'-- Found X11: /usr/include   \n'}
+[2.544375] (fitplane) StdoutLine: {'line': b'-- Looking for XOpenDisplay in /usr/lib/x86_64-linux-gnu/libX11.so;/usr/lib/x86_64-linux-gnu/libXext.so\n'}
+[2.620177] (-) TimerEvent: {}
+[2.642247] (fitplane) StdoutLine: {'line': b'-- Looking for XOpenDisplay in /usr/lib/x86_64-linux-gnu/libX11.so;/usr/lib/x86_64-linux-gnu/libXext.so - found\n'}
+[2.642767] (fitplane) StdoutLine: {'line': b'-- Looking for gethostbyname\n'}
+[2.721421] (-) TimerEvent: {}
+[2.730343] (fitplane) StdoutLine: {'line': b'-- Looking for gethostbyname - found\n'}
+[2.730540] (fitplane) StdoutLine: {'line': b'-- Looking for connect\n'}
+[2.818033] (fitplane) StdoutLine: {'line': b'-- Looking for connect - found\n'}
+[2.818376] (fitplane) StdoutLine: {'line': b'-- Looking for remove\n'}
+[2.822244] (-) TimerEvent: {}
+[2.908069] (fitplane) StdoutLine: {'line': b'-- Looking for remove - found\n'}
+[2.908519] (fitplane) StdoutLine: {'line': b'-- Looking for shmat\n'}
+[2.922778] (-) TimerEvent: {}
+[3.018721] (fitplane) StdoutLine: {'line': b'-- Looking for shmat - found\n'}
+[3.019103] (fitplane) StdoutLine: {'line': b'-- Looking for IceConnectionNumber in ICE\n'}
+[3.023339] (-) TimerEvent: {}
+[3.110822] (fitplane) StdoutLine: {'line': b'-- Looking for IceConnectionNumber in ICE - found\n'}
+[3.123709] (-) TimerEvent: {}
+[3.224293] (fitplane) StdoutLine: {'line': b'-- Found EXPAT: /usr/lib/x86_64-linux-gnu/libexpat.so (found version "2.4.7") \n'}
+[3.224460] (-) TimerEvent: {}
+[3.226395] (fitplane) StdoutLine: {'line': b'-- Found double-conversion: /usr/lib/x86_64-linux-gnu/libdouble-conversion.so  \n'}
+[3.229135] (fitplane) StdoutLine: {'line': b'-- Found LZ4: /usr/lib/x86_64-linux-gnu/liblz4.so (found version "1.9.3") \n'}
+[3.231629] (fitplane) StdoutLine: {'line': b'-- Found LZMA: /usr/lib/x86_64-linux-gnu/liblzma.so (found version "5.2.5") \n'}
+[3.290751] (fitplane) StdoutLine: {'line': b'-- Found JPEG: /usr/lib/x86_64-linux-gnu/libjpeg.so (found version "80") \n'}
+[3.296196] (fitplane) StdoutLine: {'line': b'-- Found TIFF: /usr/lib/x86_64-linux-gnu/libtiff.so (found version "4.3.0")  \n'}
+[3.300247] (fitplane) StdoutLine: {'line': b'-- Found Freetype: /usr/lib/x86_64-linux-gnu/libfreetype.so (found version "2.11.1") \n'}
+[3.307154] (fitplane) StdoutLine: {'line': b'-- Found utf8cpp: /usr/include/utf8cpp  \n'}
+[3.324776] (-) TimerEvent: {}
+[3.420537] (fitplane) StdoutLine: {'line': b"-- Checking for module 'libusb-1.0'\n"}
+[3.424984] (-) TimerEvent: {}
+[3.440962] (fitplane) StdoutLine: {'line': b'--   Found libusb-1.0, version 1.0.25\n'}
+[3.496142] (fitplane) StdoutLine: {'line': b'-- Found libusb: /usr/lib/x86_64-linux-gnu/libusb-1.0.so  \n'}
+[3.497676] (fitplane) StdoutLine: {'line': b'-- Found OpenNI: /usr/lib/libOpenNI.so;libusb::libusb (found version "1.5.4.0") \n'}
+[3.497921] (fitplane) StdoutLine: {'line': b'-- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)\n'}
+[3.509127] (local_planner) StdoutLine: {'line': b"-- Checking for module 'libusb-1.0'\n"}
+[3.525453] (-) TimerEvent: {}
+[3.529442] (local_planner) StdoutLine: {'line': b'--   Found libusb-1.0, version 1.0.25\n'}
+[3.581306] (fitplane) StdoutLine: {'line': b'-- Found OpenNI2: /usr/lib/x86_64-linux-gnu/libOpenNI2.so;libusb::libusb (found version "2.2.0.33") \n'}
+[3.581476] (fitplane) StdoutLine: {'line': b'-- OpenNI2 found (version: 2.2.0.33, include: /usr/include/openni2, lib: /usr/lib/x86_64-linux-gnu/libOpenNI2.so;libusb::libusb)\n'}
+[3.581673] (fitplane) StderrLine: {'line': b'\x1b[0m** WARNING ** io features related to pcap will be disabled\x1b[0m\n'}
+[3.583272] (local_planner) StdoutLine: {'line': b'-- Found libusb: /usr/lib/x86_64-linux-gnu/libusb-1.0.so  \n'}
+[3.584571] (local_planner) StdoutLine: {'line': b'-- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)\n'}
+[3.625808] (-) TimerEvent: {}
+[3.670234] (local_planner) StdoutLine: {'line': b'-- OpenNI2 found (version: 2.2.0.33, include: /usr/include/openni2, lib: /usr/lib/x86_64-linux-gnu/libOpenNI2.so;libusb::libusb)\n'}
+[3.726144] (-) TimerEvent: {}
+[3.743718] (fitplane) StdoutLine: {'line': b'-- Eigen found (include: /usr/include/eigen3, version: 3.4.0)\n'}
+[3.750998] (fitplane) StdoutLine: {'line': b'-- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)\n'}
+[3.761163] (fitplane) StdoutLine: {'line': b'-- OpenNI2 found (version: 2.2.0.33, include: /usr/include/openni2, lib: /usr/lib/x86_64-linux-gnu/libOpenNI2.so;libusb::libusb)\n'}
+[3.827057] (local_planner) StdoutLine: {'line': b'-- Eigen found (include: /usr/include/eigen3, version: 3.4.0)\n'}
+[3.827234] (-) TimerEvent: {}
+[3.835181] (local_planner) StdoutLine: {'line': b'-- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)\n'}
+[3.844088] (local_planner) StdoutLine: {'line': b'-- OpenNI2 found (version: 2.2.0.33, include: /usr/include/openni2, lib: /usr/lib/x86_64-linux-gnu/libOpenNI2.so;libusb::libusb)\n'}
+[3.914333] (fitplane) StdoutLine: {'line': b'-- Found Qhull version 8.0.2\n'}
+[3.927812] (-) TimerEvent: {}
+[3.998166] (local_planner) StdoutLine: {'line': b'-- Found Qhull version 8.0.2\n'}
+[4.027958] (-) TimerEvent: {}
+[4.073086] (fitplane) StdoutLine: {'line': b'-- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)\n'}
+[4.128452] (-) TimerEvent: {}
+[4.160777] (local_planner) StdoutLine: {'line': b'-- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)\n'}
+[4.228136] (fitplane) StdoutLine: {'line': b'-- looking for PCL_COMMON\n'}
+[4.229030] (-) TimerEvent: {}
+[4.229326] (fitplane) StdoutLine: {'line': b'-- Found PCL_COMMON: /usr/lib/x86_64-linux-gnu/libpcl_common.so  \n'}
+[4.229421] (fitplane) StdoutLine: {'line': b'-- looking for PCL_KDTREE\n'}
+[4.231226] (fitplane) StdoutLine: {'line': b'-- Found PCL_KDTREE: /usr/lib/x86_64-linux-gnu/libpcl_kdtree.so  \n'}
+[4.231316] (fitplane) StdoutLine: {'line': b'-- looking for PCL_OCTREE\n'}
+[4.231710] (fitplane) StdoutLine: {'line': b'-- Found PCL_OCTREE: /usr/lib/x86_64-linux-gnu/libpcl_octree.so  \n'}
+[4.231976] (fitplane) StdoutLine: {'line': b'-- looking for PCL_SEARCH\n'}
+[4.232677] (fitplane) StdoutLine: {'line': b'-- Found PCL_SEARCH: /usr/lib/x86_64-linux-gnu/libpcl_search.so  \n'}
+[4.232938] (fitplane) StdoutLine: {'line': b'-- looking for PCL_SAMPLE_CONSENSUS\n'}
+[4.233581] (fitplane) StdoutLine: {'line': b'-- Found PCL_SAMPLE_CONSENSUS: /usr/lib/x86_64-linux-gnu/libpcl_sample_consensus.so  \n'}
+[4.233732] (fitplane) StdoutLine: {'line': b'-- looking for PCL_FILTERS\n'}
+[4.234488] (fitplane) StdoutLine: {'line': b'-- Found PCL_FILTERS: /usr/lib/x86_64-linux-gnu/libpcl_filters.so  \n'}
+[4.234590] (fitplane) StdoutLine: {'line': b'-- looking for PCL_2D\n'}
+[4.234887] (fitplane) StdoutLine: {'line': b'-- Found PCL_2D: /usr/include/pcl-1.12  \n'}
+[4.235124] (fitplane) StdoutLine: {'line': b'-- looking for PCL_GEOMETRY\n'}
+[4.235319] (fitplane) StdoutLine: {'line': b'-- Found PCL_GEOMETRY: /usr/include/pcl-1.12  \n'}
+[4.235392] (fitplane) StdoutLine: {'line': b'-- looking for PCL_IO\n'}
+[4.236049] (fitplane) StdoutLine: {'line': b'-- Found PCL_IO: /usr/lib/x86_64-linux-gnu/libpcl_io.so  \n'}
+[4.236346] (fitplane) StdoutLine: {'line': b'-- looking for PCL_FEATURES\n'}
+[4.237018] (fitplane) StdoutLine: {'line': b'-- Found PCL_FEATURES: /usr/lib/x86_64-linux-gnu/libpcl_features.so  \n'}
+[4.237307] (fitplane) StdoutLine: {'line': b'-- looking for PCL_ML\n'}
+[4.237979] (fitplane) StdoutLine: {'line': b'-- Found PCL_ML: /usr/lib/x86_64-linux-gnu/libpcl_ml.so  \n'}
+[4.238668] (fitplane) StdoutLine: {'line': b'-- looking for PCL_SEGMENTATION\n'}
+[4.238912] (fitplane) StdoutLine: {'line': b'-- Found PCL_SEGMENTATION: /usr/lib/x86_64-linux-gnu/libpcl_segmentation.so  \n'}
+[4.239158] (fitplane) StdoutLine: {'line': b'-- looking for PCL_VISUALIZATION\n'}
+[4.239946] (fitplane) StdoutLine: {'line': b'-- Found PCL_VISUALIZATION: /usr/lib/x86_64-linux-gnu/libpcl_visualization.so  \n'}
+[4.240114] (fitplane) StdoutLine: {'line': b'-- looking for PCL_SURFACE\n'}
+[4.240789] (fitplane) StdoutLine: {'line': b'-- Found PCL_SURFACE: /usr/lib/x86_64-linux-gnu/libpcl_surface.so  \n'}
+[4.241039] (fitplane) StdoutLine: {'line': b'-- looking for PCL_REGISTRATION\n'}
+[4.241767] (fitplane) StdoutLine: {'line': b'-- Found PCL_REGISTRATION: /usr/lib/x86_64-linux-gnu/libpcl_registration.so  \n'}
+[4.242024] (fitplane) StdoutLine: {'line': b'-- looking for PCL_KEYPOINTS\n'}
+[4.242797] (fitplane) StdoutLine: {'line': b'-- Found PCL_KEYPOINTS: /usr/lib/x86_64-linux-gnu/libpcl_keypoints.so  \n'}
+[4.242902] (fitplane) StdoutLine: {'line': b'-- looking for PCL_TRACKING\n'}
+[4.243841] (fitplane) StdoutLine: {'line': b'-- Found PCL_TRACKING: /usr/lib/x86_64-linux-gnu/libpcl_tracking.so  \n'}
+[4.244558] (fitplane) StdoutLine: {'line': b'-- looking for PCL_RECOGNITION\n'}
+[4.245239] (fitplane) StdoutLine: {'line': b'-- Found PCL_RECOGNITION: /usr/lib/x86_64-linux-gnu/libpcl_recognition.so  \n'}
+[4.245757] (fitplane) StdoutLine: {'line': b'-- looking for PCL_STEREO\n'}
+[4.246876] (fitplane) StdoutLine: {'line': b'-- Found PCL_STEREO: /usr/lib/x86_64-linux-gnu/libpcl_stereo.so  \n'}
+[4.247112] (fitplane) StdoutLine: {'line': b'-- looking for PCL_APPS\n'}
+[4.248303] (fitplane) StdoutLine: {'line': b'-- Found PCL_APPS: /usr/lib/x86_64-linux-gnu/libpcl_apps.so  \n'}
+[4.249039] (fitplane) StdoutLine: {'line': b'-- looking for PCL_IN_HAND_SCANNER\n'}
+[4.249440] (fitplane) StdoutLine: {'line': b'-- Found PCL_IN_HAND_SCANNER: /usr/include/pcl-1.12  \n'}
+[4.249921] (fitplane) StdoutLine: {'line': b'-- looking for PCL_MODELER\n'}
+[4.250369] (fitplane) StdoutLine: {'line': b'-- Found PCL_MODELER: /usr/include/pcl-1.12  \n'}
+[4.250578] (fitplane) StdoutLine: {'line': b'-- looking for PCL_POINT_CLOUD_EDITOR\n'}
+[4.251457] (fitplane) StdoutLine: {'line': b'-- Found PCL_POINT_CLOUD_EDITOR: /usr/include/pcl-1.12  \n'}
+[4.251572] (fitplane) StdoutLine: {'line': b'-- looking for PCL_OUTOFCORE\n'}
+[4.252579] (fitplane) StdoutLine: {'line': b'-- Found PCL_OUTOFCORE: /usr/lib/x86_64-linux-gnu/libpcl_outofcore.so  \n'}
+[4.252708] (fitplane) StdoutLine: {'line': b'-- looking for PCL_PEOPLE\n'}
+[4.253627] (fitplane) StdoutLine: {'line': b'-- Found PCL_PEOPLE: /usr/lib/x86_64-linux-gnu/libpcl_people.so  \n'}
+[4.254505] (fitplane) StdoutLine: {'line': b'-- Found PCL: pcl_common;pcl_kdtree;pcl_octree;pcl_search;pcl_sample_consensus;pcl_filters;pcl_io;pcl_features;pcl_ml;pcl_segmentation;pcl_visualization;pcl_surface;pcl_registration;pcl_keypoints;pcl_tracking;pcl_recognition;pcl_stereo;pcl_apps;pcl_outofcore;pcl_people;Boost::system;Boost::filesystem;Boost::date_time;Boost::iostreams;Boost::serialization;/usr/lib/libOpenNI.so;libusb::libusb;/usr/lib/x86_64-linux-gnu/libOpenNI2.so;libusb::libusb;VTK::ChartsCore;VTK::CommonColor;VTK::CommonComputationalGeometry;VTK::CommonCore;VTK::CommonDataModel;VTK::CommonExecutionModel;VTK::CommonMath;VTK::CommonMisc;VTK::CommonTransforms;VTK::FiltersCore;VTK::FiltersExtraction;VTK::FiltersGeneral;VTK::FiltersGeometry;VTK::FiltersModeling;VTK::FiltersSources;VTK::ImagingCore;VTK::ImagingSources;VTK::InteractionImage;VTK::InteractionStyle;VTK::InteractionWidgets;VTK::IOCore;VTK::IOGeometry;VTK::IOImage;VTK::IOLegacy;VTK::IOPLY;VTK::RenderingAnnotation;VTK::RenderingCore;VTK::RenderingContext2D;VTK::RenderingLOD;VTK::RenderingFreeType;VTK::ViewsCore;VTK::ViewsContext2D;VTK::RenderingOpenGL2;VTK::GUISupportQt;FLANN::FLANN;QHULL::QHULL  \n'}
+[4.255849] (fitplane) StdoutLine: {'line': b'-- Found pcl_conversions: 2.4.5 (/opt/ros/humble/share/pcl_conversions/cmake)\n'}
+[4.299835] (fitplane) StdoutLine: {'line': b'-- Found tf2_ros: 0.25.11 (/opt/ros/humble/share/tf2_ros/cmake)\n'}
+[4.315769] (local_planner) StdoutLine: {'line': b'-- Found PCL_COMMON: /usr/lib/x86_64-linux-gnu/libpcl_common.so  \n'}
+[4.316726] (local_planner) StdoutLine: {'line': b'-- Found PCL_KDTREE: /usr/lib/x86_64-linux-gnu/libpcl_kdtree.so  \n'}
+[4.317626] (local_planner) StdoutLine: {'line': b'-- Found PCL_OCTREE: /usr/lib/x86_64-linux-gnu/libpcl_octree.so  \n'}
+[4.318400] (local_planner) StdoutLine: {'line': b'-- Found PCL_SEARCH: /usr/lib/x86_64-linux-gnu/libpcl_search.so  \n'}
+[4.319323] (local_planner) StdoutLine: {'line': b'-- Found PCL_SAMPLE_CONSENSUS: /usr/lib/x86_64-linux-gnu/libpcl_sample_consensus.so  \n'}
+[4.320157] (local_planner) StdoutLine: {'line': b'-- Found PCL_FILTERS: /usr/lib/x86_64-linux-gnu/libpcl_filters.so  \n'}
+[4.320479] (local_planner) StdoutLine: {'line': b'-- Found PCL_2D: /usr/include/pcl-1.12  \n'}
+[4.320814] (local_planner) StdoutLine: {'line': b'-- Found PCL_GEOMETRY: /usr/include/pcl-1.12  \n'}
+[4.321912] (local_planner) StdoutLine: {'line': b'-- Found PCL_IO: /usr/lib/x86_64-linux-gnu/libpcl_io.so  \n'}
+[4.323300] (local_planner) StdoutLine: {'line': b'-- Found PCL_FEATURES: /usr/lib/x86_64-linux-gnu/libpcl_features.so  \n'}
+[4.324623] (local_planner) StdoutLine: {'line': b'-- Found PCL_ML: /usr/lib/x86_64-linux-gnu/libpcl_ml.so  \n'}
+[4.325981] (local_planner) StdoutLine: {'line': b'-- Found PCL_SEGMENTATION: /usr/lib/x86_64-linux-gnu/libpcl_segmentation.so  \n'}
+[4.327311] (local_planner) StdoutLine: {'line': b'-- Found PCL_VISUALIZATION: /usr/lib/x86_64-linux-gnu/libpcl_visualization.so  \n'}
+[4.328606] (local_planner) StdoutLine: {'line': b'-- Found PCL_SURFACE: /usr/lib/x86_64-linux-gnu/libpcl_surface.so  \n'}
+[4.329808] (-) TimerEvent: {}
+[4.330198] (local_planner) StdoutLine: {'line': b'-- Found PCL_REGISTRATION: /usr/lib/x86_64-linux-gnu/libpcl_registration.so  \n'}
+[4.331375] (local_planner) StdoutLine: {'line': b'-- Found PCL_KEYPOINTS: /usr/lib/x86_64-linux-gnu/libpcl_keypoints.so  \n'}
+[4.332718] (local_planner) StdoutLine: {'line': b'-- Found PCL_TRACKING: /usr/lib/x86_64-linux-gnu/libpcl_tracking.so  \n'}
+[4.333974] (local_planner) StdoutLine: {'line': b'-- Found PCL_RECOGNITION: /usr/lib/x86_64-linux-gnu/libpcl_recognition.so  \n'}
+[4.335540] (local_planner) StdoutLine: {'line': b'-- Found PCL_STEREO: /usr/lib/x86_64-linux-gnu/libpcl_stereo.so  \n'}
+[4.336718] (local_planner) StdoutLine: {'line': b'-- Found PCL_APPS: /usr/lib/x86_64-linux-gnu/libpcl_apps.so  \n'}
+[4.337928] (local_planner) StdoutLine: {'line': b'-- Found PCL_IN_HAND_SCANNER: /usr/include/pcl-1.12  \n'}
+[4.338473] (local_planner) StdoutLine: {'line': b'-- Found PCL_MODELER: /usr/include/pcl-1.12  \n'}
+[4.340956] (local_planner) StdoutLine: {'line': b'-- Found PCL_POINT_CLOUD_EDITOR: /usr/include/pcl-1.12  \n'}
+[4.341050] (local_planner) StdoutLine: {'line': b'-- Found PCL_OUTOFCORE: /usr/lib/x86_64-linux-gnu/libpcl_outofcore.so  \n'}
+[4.341382] (local_planner) StdoutLine: {'line': b'-- Found PCL_PEOPLE: /usr/lib/x86_64-linux-gnu/libpcl_people.so  \n'}
+[4.356765] (local_planner) StdoutLine: {'line': b'-- Configuring incomplete, errors occurred!\n'}
+[4.356959] (local_planner) StdoutLine: {'line': b'See also "/home/jacklenolee/LRAE_WS/build/local_planner/CMakeFiles/CMakeOutput.log".\n'}
+[4.357117] (local_planner) StderrLine: {'line': b'\x1b[31mCMake Error at CMakeLists.txt:29 (find_package):\n'}
+[4.357245] (local_planner) StderrLine: {'line': b'  By not providing "Findpcl_ros.cmake" in CMAKE_MODULE_PATH this project has\n'}
+[4.357302] (local_planner) StderrLine: {'line': b'  asked CMake to find a package configuration file provided by "pcl_ros", but\n'}
+[4.357349] (local_planner) StderrLine: {'line': b'  CMake did not find one.\n'}
+[4.357391] (local_planner) StderrLine: {'line': b'\n'}
+[4.357434] (local_planner) StderrLine: {'line': b'  Could not find a package configuration file provided by "pcl_ros" with any\n'}
+[4.357476] (local_planner) StderrLine: {'line': b'  of the following names:\n'}
+[4.357516] (local_planner) StderrLine: {'line': b'\n'}
+[4.357555] (local_planner) StderrLine: {'line': b'    pcl_rosConfig.cmake\n'}
+[4.357596] (local_planner) StderrLine: {'line': b'    pcl_ros-config.cmake\n'}
+[4.357635] (local_planner) StderrLine: {'line': b'\n'}
+[4.357794] (local_planner) StderrLine: {'line': b'  Add the installation prefix of "pcl_ros" to CMAKE_PREFIX_PATH or set\n'}
+[4.357883] (local_planner) StderrLine: {'line': b'  "pcl_ros_DIR" to a directory containing one of the above files.  If\n'}
+[4.357934] (local_planner) StderrLine: {'line': b'  "pcl_ros" provides a separate development package or SDK, be sure it has\n'}
+[4.357978] (local_planner) StderrLine: {'line': b'  been installed.\n'}
+[4.358019] (local_planner) StderrLine: {'line': b'\n'}
+[4.358060] (local_planner) StderrLine: {'line': b'\x1b[0m\n'}
+[4.380243] (local_planner) JobEnded: {'identifier': 'local_planner', 'rc': 'SIGINT'}
+[4.383972] (fitplane) StdoutLine: {'line': b'-- Found rosidl_default_generators: 1.2.0 (/opt/ros/humble/share/rosidl_default_generators/cmake)\n'}
+[4.430565] (-) TimerEvent: {}
+[4.531001] (-) TimerEvent: {}
+[4.570227] (fitplane) StderrLine: {'line': b'\x1b[31mCMake Error at /opt/ros/humble/share/rosidl_adapter/cmake/rosidl_adapt_interfaces.cmake:59 (message):\n'}
+[4.570399] (fitplane) StderrLine: {'line': b'  execute_process(/usr/bin/python3 -m rosidl_adapter --package-name fitplane\n'}
+[4.570465] (fitplane) StderrLine: {'line': b'  --arguments-file\n'}
+[4.570514] (fitplane) StderrLine: {'line': b'  /home/jacklenolee/LRAE_WS/build/fitplane/rosidl_adapter__arguments__fitplane.json\n'}
+[4.570558] (fitplane) StderrLine: {'line': b'  --output-dir\n'}
+[4.570634] (fitplane) StderrLine: {'line': b'  /home/jacklenolee/LRAE_WS/build/fitplane/rosidl_adapter/fitplane\n'}
+[4.570698] (fitplane) StderrLine: {'line': b'  --output-file\n'}
+[4.570750] (fitplane) StderrLine: {'line': b'  /home/jacklenolee/LRAE_WS/build/fitplane/rosidl_adapter/fitplane.idls)\n'}
+[4.570956] (fitplane) StderrLine: {'line': b'  returned error code 1:\n'}
+[4.571007] (fitplane) StderrLine: {'line': b'\n'}
+[4.571051] (fitplane) StderrLine: {'line': b"  Error processing 'float64 PlaneCellHeight' of 'fitplane/Plane':\n"}
+[4.571094] (fitplane) StderrLine: {'line': b"  ''PlaneCellHeight' is an invalid field name.  It should have the pattern\n"}
+[4.571135] (fitplane) StderrLine: {'line': b"  '^(?!.*__)(?!.*_$)[a-z][a-z0-9_]*$''\n"}
+[4.571177] (fitplane) StderrLine: {'line': b'\n'}
+[4.571217] (fitplane) StderrLine: {'line': b'  Traceback (most recent call last):\n'}
+[4.571268] (fitplane) StderrLine: {'line': b'\n'}
+[4.571308] (fitplane) StderrLine: {'line': b'    File "/usr/lib/python3.10/runpy.py", line 196, in _run_module_as_main\n'}
+[4.571348] (fitplane) StderrLine: {'line': b'      return _run_code(code, main_globals, None,\n'}
+[4.571386] (fitplane) StderrLine: {'line': b'    File "/usr/lib/python3.10/runpy.py", line 86, in _run_code\n'}
+[4.571425] (fitplane) StderrLine: {'line': b'      exec(code, run_globals)\n'}
+[4.571462] (fitplane) StderrLine: {'line': b'    File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_adapter/__main__.py", line 19, in <module>\n'}
+[4.571593] (fitplane) StderrLine: {'line': b'      sys.exit(main())\n'}
+[4.571676] (fitplane) StderrLine: {'line': b'    File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_adapter/main.py", line 53, in main\n'}
+[4.571725] (fitplane) StderrLine: {'line': b'      abs_idl_file = convert_to_idl(\n'}
+[4.571766] (fitplane) StderrLine: {'line': b'    File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_adapter/__init__.py", line 19, in convert_to_idl\n'}
+[4.571808] (fitplane) StderrLine: {'line': b'      return convert_msg_to_idl(\n'}
+[4.571849] (fitplane) StderrLine: {'line': b'    File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_adapter/msg/__init__.py", line 28, in convert_msg_to_idl\n'}
+[4.571891] (fitplane) StderrLine: {'line': b'      msg = parse_message_string(package_name, input_file.stem, content)\n'}
+[4.571938] (fitplane) StderrLine: {'line': b'    File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_adapter/parser.py", line 519, in parse_message_string\n'}
+[4.571979] (fitplane) StderrLine: {'line': b'      fields.append(Field(\n'}
+[4.572019] (fitplane) StderrLine: {'line': b'    File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_adapter/parser.py", line 354, in __init__\n'}
+[4.572057] (fitplane) StderrLine: {'line': b'      raise NameError(\n'}
+[4.572095] (fitplane) StderrLine: {'line': b'\n'}
+[4.572131] (fitplane) StderrLine: {'line': b"  NameError: 'PlaneCellHeight' is an invalid field name.  It should have the\n"}
+[4.572169] (fitplane) StderrLine: {'line': b"  pattern '^(?!.*__)(?!.*_$)[a-z][a-z0-9_]*$'\n"}
+[4.572209] (fitplane) StderrLine: {'line': b'\n'}
+[4.572247] (fitplane) StderrLine: {'line': b'Call Stack (most recent call first):\n'}
+[4.572284] (fitplane) StderrLine: {'line': b'  /opt/ros/humble/share/rosidl_cmake/cmake/rosidl_generate_interfaces.cmake:130 (rosidl_adapt_interfaces)\n'}
+[4.572322] (fitplane) StderrLine: {'line': b'  CMakeLists.txt:22 (rosidl_generate_interfaces)\n'}
+[4.572359] (fitplane) StderrLine: {'line': b'\n'}
+[4.572396] (fitplane) StderrLine: {'line': b'\x1b[0m\n'}
+[4.572433] (fitplane) StdoutLine: {'line': b'-- Configuring incomplete, errors occurred!\n'}
+[4.572480] (fitplane) StdoutLine: {'line': b'See also "/home/jacklenolee/LRAE_WS/build/fitplane/CMakeFiles/CMakeOutput.log".\n'}
+[4.597486] (fitplane) JobEnded: {'identifier': 'fitplane', 'rc': 'SIGINT'}
+[4.608601] (lrae_planner) JobSkipped: {'identifier': 'lrae_planner'}
+[4.608703] (scout_control) JobSkipped: {'identifier': 'scout_control'}
+[4.608905] (sensor_conversion) JobSkipped: {'identifier': 'sensor_conversion'}
+[4.608928] (simworld) JobSkipped: {'identifier': 'simworld'}
+[4.608943] (scout_gazebo_sim) JobSkipped: {'identifier': 'scout_gazebo_sim'}
+[4.608956] (-) EventReactorShutdown: {}

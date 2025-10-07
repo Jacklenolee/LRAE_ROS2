@@ -1,0 +1,1 @@
+Invoking command in '/home/jacklenolee/LRAE_WS/build/gen_local_goal': /usr/bin/cmake /home/jacklenolee/LRAE_WS/src/LRAE-ROS2/gen_local_goal -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/home/jacklenolee/LRAE_WS/install/gen_local_goal

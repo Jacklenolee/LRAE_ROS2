@@ -1,0 +1,4 @@
+source;share/gen_local_goal/local_setup.bash
+source;share/gen_local_goal/local_setup.dsv
+source;share/gen_local_goal/local_setup.sh
+source;share/gen_local_goal/local_setup.zsh

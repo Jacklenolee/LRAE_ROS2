@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>gen_local_goal</name>
+  <version>0.0.0</version>
+  <description>The gen_local_goal package</description>
+
+  <maintainer email="2120230386@mail.nankai.edu.cn">Qingchen Bi</maintainer>
+
+  <license>MIT</license>
+
+  <!-- Build tool dependency -->
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <!-- Build dependencies -->
+  <build_depend>nav_msgs</build_depend>
+  <build_depend>rclcpp</build_depend>
+  <build_depend>tf2</build_depend>
+  <build_depend>tf2_ros</build_depend>
+  <build_depend>pluginlib</build_depend>
+
+  <!-- Exec dependencies -->
+  <exec_depend>nav_msgs</exec_depend>
+  <exec_depend>rclcpp</exec_depend>
+  <exec_depend>tf2</exec_depend>
+  <exec_depend>tf2_ros</exec_depend>
+  <!-- Test dependencies (if any) -->
+  <!-- <test_depend>gtest</test_depend> -->
+
+</package>

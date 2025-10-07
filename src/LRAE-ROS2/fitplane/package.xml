@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>fitplane</name>
+  <version>0.0.0</version>
+  <description>The fitplane package</description>
+
+  <maintainer email="QingchenBi@todo.todo">QingchenBi</maintainer>
+
+  <!-- One license tag required, multiple allowed, one license per tag -->
+  <!-- Commonly used license strings: -->
+  <!--   BSD, MIT, Boost Software License, GPLv2, GPLv3, LGPLv2.1, LGPLv3 -->
+  <license>TODO</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <!-- ROS2消息和服务依赖 -->
+  <build_depend>geometry_msgs</build_depend>
+  <build_depend>nav_msgs</build_depend>
+  <build_depend>rclcpp</build_depend>
+  <build_depend>rclpy</build_depend> 
+  <build_depend>std_msgs</build_depend>
+  <build_depend>rviz_default_plugins</build_depend> <!-- 替代rviz_visual_tools，可能需要调整 -->
+  <build_depend>visualization_msgs</build_depend>
+
+  <build_export_depend>geometry_msgs</build_export_depend>
+  <build_export_depend>nav_msgs</build_export_depend>
+  <build_export_depend>std_msgs</build_export_depend>
+  <build_export_depend>visualization_msgs</build_export_depend>
+  <build_export_depend>rclcpp</build_export_depend>
+  <build_export_depend>rclpy</build_export_depend>
+  <build_export_depend>rviz_default_plugins</build_export_depend>
+
+  <exec_depend>geometry_msgs</exec_depend>
+  <exec_depend>nav_msgs</exec_depend>
+  <exec_depend>rclcpp</exec_depend>
+  <exec_depend>rclpy</exec_depend>
+  <exec_depend>rviz_default_plugins</exec_depend>
+  <exec_depend>std_msgs</exec_depend>
+  <exec_depend>visualization_msgs</exec_depend>
+
+  <member_of_group>rosidl_interface_packages</member_of_group>
+
+  <test_depend>ament_lint_auto</test_depend>
+  <test_depend>ament_lint_common</test_depend>
+
+  <!-- 消息生成依赖在ROS2中有所不同 -->
+  <build_depend>rosidl_default_generators</build_depend>
+  <exec_depend>rosidl_default_runtime</exec_depend>
+  <build_depend>ament_cmake_ros</build_depend> <!-- 用于消息和服务 -->
+
+  <!-- The export tag contains other, unspecified, tags -->
+  <export>
+    <build_type>ament_cmake</build_type>
+    <!-- Other tools can request additional information be placed here -->
+  </export>
+</package>

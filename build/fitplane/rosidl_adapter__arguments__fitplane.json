@@ -1,0 +1,7 @@
+{
+  "package_name": "fitplane",
+  "non_idl_tuples": [
+    "/home/jacklenolee/LRAE_WS/src/LRAE-ROS2/fitplane:msg/Plane.msg",
+    "/home/jacklenolee/LRAE_WS/src/LRAE-ROS2/fitplane:msg/PlaneMap.msg"
+  ]
+}
