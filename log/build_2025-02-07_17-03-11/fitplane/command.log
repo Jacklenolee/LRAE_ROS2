@@ -1,1 +1,0 @@
-Invoking command in '/home/jacklenolee/LRAE_WS/build/fitplane': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/jacklenolee/LRAE_WS/src/LRAE-ROS2/fitplane -DCMAKE_INSTALL_PREFIX=/home/jacklenolee/LRAE_WS/install/fitplane

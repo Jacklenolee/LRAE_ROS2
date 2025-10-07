@@ -1,1 +1,0 @@
-Invoking command in '/home/jacklenolee/LRAE_WS/build/local_planner': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/jacklenolee/LRAE_WS/src/LRAE-ROS2/local_planner -DCMAKE_INSTALL_PREFIX=/home/jacklenolee/LRAE_WS/install/local_planner
