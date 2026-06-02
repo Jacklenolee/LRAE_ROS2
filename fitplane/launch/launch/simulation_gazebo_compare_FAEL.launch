@@ -1,0 +1,29 @@
+<launch>
+  <include file="$(find-pkg-share fitplane)/launch/world.launch"/>
+  <include file="$(find-pkg-share scout_gazebo_sim)/launch/scout_v2_spawn.launch.py">
+    <!-- Scene 1 -->
+    <!-- <arg name="start_x" value="-14"/>
+    <arg name="start_y" value="-14"/>
+    <arg name="start_z" value="0.3"/> -->
+
+    <!-- Scene 2 -->
+    <arg name="start_x" value="-27"/>
+    <arg name="start_y" value="-27"/>
+    <arg name="start_z" value="0.3"/>
+
+    <!-- Scene 3 -->
+    <!-- <arg name="start_x" value="-18"/>
+    <arg name="start_y" value="-20"/>
+    <arg name="start_z" value="0.5"/> -->
+
+    <!-- Scene 4 -->
+    <!-- <arg name="start_x" value="0.0"/>
+    <arg name="start_y" value="0.0"/>
+    <arg name="start_z" value="0.5"/> -->
+  </include>
+
+  <node pkg="fitplane" exec="Traversibility_mapping" name="Traversibility_mapping" output="screen" on_exit="shutdown">
+    <param name="PointCloud_Map_topic" value="/explored_cloud"/>
+    <param name="Grid_Map_topic" value="/grid_map"/>
+  </node>
+</launch>

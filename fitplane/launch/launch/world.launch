@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+
+<launch>
+  <arg name="paused" default="false"/>
+  <arg name="use_sim_time" default="true"/>
+  <arg name="gui" default="true"/>
+  <arg name="headless" default="false"/>
+  <arg name="debug" default="false"/>
+  <arg name="verbose" default="false"/>
+  <arg name="world_name" default="scene_2"/>
+
+  <include file="$(find-pkg-share gazebo_ros)/launch/gzserver.launch.py">
+    <arg name="world" value="$(find-pkg-share simworld)/worlds/map_$(var world_name).world"/>
+    <arg name="pause" value="$(var paused)"/>
+    <arg name="verbose" value="$(var verbose)"/>
+  </include>
+
+  <include file="$(find-pkg-share gazebo_ros)/launch/gzclient.launch.py" if="$(var gui)">
+    <arg name="verbose" value="$(var verbose)"/>
+  </include>
+</launch>

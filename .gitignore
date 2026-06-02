@@ -1,0 +1,23 @@
+# ROS/colcon build products
+build/
+install/
+log/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# CMake and compiler products
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+*.o
+*.so
+*.a
+
+# Editor and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

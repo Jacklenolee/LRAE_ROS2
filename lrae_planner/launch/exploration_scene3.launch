@@ -1,0 +1,115 @@
+<launch>
+
+  <arg name="sensorOffsetX" default="0"/>
+  <arg name="sensorOffsetY" default="0"/>
+  <arg name="cameraOffsetZ" default="0"/>
+  <arg name="twoWayDrive" default="true"/>
+  <arg name="maxSpeed" default="1.0"/>
+  <arg name="autonomyMode" default="true"/>
+  <arg name="autonomySpeed" default="1.0"/>
+  <arg name="joyToSpeedDelay" default="2.0"/>
+  <arg name="goalX" default="0"/>
+  <arg name="goalY" default="0"/>
+
+  <node name="lrae_planner_node" pkg="lrae_planner" exec="lrae_planner_node" output="screen">
+    <param name="angle_pen" value="0.45" />
+    <param name="update_cen_thre" value="1" />
+    <!-- <param name="unknown_num_thre" value="400" /> -->
+    <param name="unknown_num_thre" value="300" />
+    <param name="minrange" value="30.0" />
+    <param name="limit_max_square" value="false" />
+    <param name="use_go_end_nearest" value="false" />
+  </node>
+
+  <node name="exploration_map_merge" pkg="lrae_planner" exec="exploration_map_merge" output="screen">
+    <param name="map_w" value="216" />
+    <param name="map_h" value="216" />
+    <param name="mapinitox" value="-5" />
+    <param name="mapinitoy" value="-5" />
+    <param name="merge_size" value="9" />
+    <param name="safe_obs_dis" value="1" />
+  </node>
+  <node name="gen_local_goal_node" pkg="gen_local_goal" exec="gen_local_goal_node" output="screen"/>
+
+  <node pkg="local_planner" exec="localPlanner" name="localPlanner" output="screen" on_exit="shutdown">
+    <remap from="/state_estimation" to="/laser_odom_init"/>
+    <remap from="/way_point" to="/look_ahead_goal"/>
+    <remap from="/terrain_map" to="/local_traversibility_ponit_cloud"/>
+    <param name="pathFolder" value="$(find-pkg-share local_planner)/paths" />
+
+    <param name="vehicleLength" value="0.6" />
+    <param name="vehicleWidth" value="0.6" />
+    <param name="sensorOffsetX" value="$(var sensorOffsetX)" />
+    <param name="sensorOffsetY" value="$(var sensorOffsetY)" />
+    <param name="twoWayDrive" value="$(var twoWayDrive)" />
+    <param name="laserVoxelSize" value="0.05" />
+    <param name="terrainVoxelSize" value="0.1" />
+    <param name="useTerrainAnalysis" value="true" />
+    <param name="checkObstacle" value="true" />
+    <param name="checkRotObstacle" value="false" />
+    <param name="adjacentRange" value="4.25" />
+
+    <param name="obstacleHeightThre" value="0.3" />
+    <param name="groundHeightThre" value="0.1" />
+    <param name="costHeightThre" value="0.5" />
+    <param name="costScore" value="0.02" />
+    <param name="useCost" value="false" />
+    <param name="pointPerPathThre" value="2" />
+    <param name="minRelZ" value="-0.5" />
+    <param name="maxRelZ" value="0.25" />
+
+    <param name="maxSpeed" value="$(var maxSpeed)" />
+    <param name="dirWeight" value="0.02" />
+    <param name="dirThre" value="90.0" />
+    <param name="dirToVehicle" value="false" />
+    <param name="pathScale" value="1.25" />
+    <param name="minPathScale" value="0.75" />
+    <param name="pathScaleStep" value="0.25" />
+    <param name="pathScaleBySpeed" value="true" />
+    <param name="minPathRange" value="1.0" />
+    <param name="pathRangeStep" value="0.5" />
+    <param name="pathRangeBySpeed" value="true" />
+    <param name="pathCropByGoal" value="true" />
+    <param name="autonomyMode" value="$(var autonomyMode)" />
+    <param name="autonomySpeed" value="$(var autonomySpeed)" />
+    <param name="joyToSpeedDelay" value="$(var joyToSpeedDelay)" />
+    <param name="joyToCheckObstacleDelay" value="5.0" />
+    <param name="goalClearRange" value="0.5" />
+    <param name="goalX" value="$(var goalX)" />
+    <param name="goalY" value="$(var goalY)" />
+  </node>
+  <node pkg="local_planner" exec="pathFollower" name="pathFollower" output="screen" on_exit="shutdown">
+    <param name="sensorOffsetX" value="$(var sensorOffsetX)" />
+    <param name="sensorOffsetY" value="$(var sensorOffsetY)" />
+    <param name="pubSkipNum" value="1" />
+    <param name="twoWayDrive" value="$(var twoWayDrive)" />
+    <param name="lookAheadDis" value="0.5" />
+
+    <param name="yawRateGain" value="7.5" />
+    <param name="stopYawRateGain" value="7.5" />
+    <param name="maxYawRate" value="90.0" />
+
+    <param name="maxSpeed" value="$(var maxSpeed)" />
+    <param name="maxAccel" value="2" />
+    <param name="switchTimeThre" value="1.0" />
+    <param name="dirDiffThre" value="0.1" />
+    <param name="stopDisThre" value="0.2" />
+    <param name="slowDwnDisThre" value="0.85" />
+    <param name="useInclRateToSlow" value="false" />
+    <param name="inclRateThre" value="120.0" />
+    <param name="slowRate1" value="0.25" />
+    <param name="slowRate2" value="0.5" />
+    <param name="slowTime1" value="2.0" />
+    <param name="slowTime2" value="2.0" />
+    <param name="useInclToStop" value="false" />
+    <param name="inclThre" value="45.0" />
+    <param name="stopTime" value="5.0" />
+    <param name="noRotAtStop" value="false" />
+    <param name="noRotAtGoal" value="true" />
+    <param name="autonomyMode" value="$(var autonomyMode)" />
+    <param name="autonomySpeed" value="$(var autonomySpeed)" />
+    <param name="joyToSpeedDelay" value="$(var joyToSpeedDelay)" />
+  </node>
+
+  <node pkg="tf2_ros" exec="static_transform_publisher" name="vehicleTransPublisher" args="--x -$(var sensorOffsetX) --y -$(var sensorOffsetY) --z 0 --roll 0 --pitch 0 --yaw 0 --frame-id sensor --child-frame-id vehicle"/>
+</launch>
