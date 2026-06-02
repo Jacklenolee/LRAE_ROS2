@@ -9,13 +9,11 @@ from exploration_scene1 import generate_exploration_launch_description
 def generate_launch_description():
     planner_params = {
         'angle_pen': 0.45,
-        'update_cen_thre': 6,
-        'unknown_num_thre': 200,
-        'minrange': 20.0,
-        'limit_max_square': True,
-        'use_go_end_nearest': True,
-        'end_neacen_disthre': 10.0,
-        'end_cur_disrate': 2.0,
+        'update_cen_thre': 1,
+        'unknown_num_thre': 300,
+        'minrange': 30.0,
+        'limit_max_square': False,
+        'use_go_end_nearest': False,
     }
     map_params = {
         'map_w': 216,

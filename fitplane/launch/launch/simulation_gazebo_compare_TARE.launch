@@ -1,6 +1,0 @@
-<launch>
-  <node pkg="fitplane" exec="Traversibility_mapping" name="Traversibility_mapping" output="screen" on_exit="shutdown">
-    <param name="PointCloud_Map_topic" value="/registered_point_cloud"/>
-    <param name="Grid_Map_topic" value="/grid_map"/>
-  </node>
-</launch>

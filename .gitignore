@@ -7,6 +7,11 @@ log/
 __pycache__/
 *.py[cod]
 
+# Local generated/exported artifacts
+*.log
+*.zip
+* copy.*
+
 # CMake and compiler products
 CMakeFiles/
 CMakeCache.txt

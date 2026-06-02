@@ -23,6 +23,10 @@
 
   <exec_depend>gazebo_ros</exec_depend>
   <exec_depend>gazebo_plugins</exec_depend>
+  <exec_depend>controller_manager</exec_depend>
+  <exec_depend>four_ws_control</exec_depend>
+  <exec_depend>ranger_mini</exec_depend>
+  <exec_depend>scout_gazebo_sim</exec_depend>
   <exec_depend>rviz2</exec_depend>
 
   <member_of_group>rosidl_interface_packages</member_of_group>

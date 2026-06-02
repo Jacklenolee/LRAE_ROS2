@@ -1,13 +1,15 @@
 # LRAE ROS2
 
-**LRAE** is a **L**arge-**R**egion-**A**ware **E**xploration method for safe and fast autonomous exploration on uneven terrain. This repository is a ROS2 Humble port of the original LRAE exploration stack, using Gazebo Classic simulation, a Scout V2 robot model, simulated Velodyne LiDAR, TF2, PCL, and `ament_cmake`/`colcon`.
+This repository is a ROS2 migration of the original [NKU-MobFly-Robotics/LRAE](https://github.com/NKU-MobFly-Robotics/LRAE) project. The upstream LRAE code was developed for ROS1 Noetic; this version ports the exploration pipeline to ROS2 Humble with `colcon`, `ament_cmake`, TF2, Gazebo Classic, PCL, simulated Velodyne LiDAR, and ROS2 launch files.
 
-LRAE improves exploration efficiency by prioritizing large unknown regions while still considering nearby small regions. It also introduces traversability information into unknown-region extraction and safety assessment, so the robot can plan exploration routes that are efficient and terrain-aware.
+**LRAE** is a **L**arge-**R**egion-**A**ware **E**xploration method for ground robots on uneven terrain. It prioritizes large unknown regions while still considering nearby small regions, and it uses terrain traversability information to extract unknown regions, evaluate safety, and guide exploration.
 
 <p align="center">
   <img src="image/f.png" width="270" height="278" />
   <img src="image/r.png" width="500" height="278" />
 </p>
+
+**Original ROS1 repository**: [NKU-MobFly-Robotics/LRAE](https://github.com/NKU-MobFly-Robotics/LRAE)
 
 **Video**: [YouTube](https://youtu.be/xePDPZluLes), [Bilibili](https://www.bilibili.com/video/BV1g1SVYWEfw/?spm_id_from=333.999.0.0&vd_source=0e7c59dd804a18d9a9c201eafe9ac6e5)
 
@@ -15,7 +17,20 @@ LRAE improves exploration efficiency by prioritizing large unknown regions while
 
 Q. Bi, X. Zhang, S. Zhang, R. Wang, L. Li and J. Yuan, "LRAE: Large-Region-Aware Safe and Fast Autonomous Exploration of Ground Robots for Uneven Terrains," IEEE Robotics and Automation Letters, vol. 9, no. 12, pp. 11186-11193.
 
-If this project is useful to your research, please cite the paper and star the code.
+**Other links**: [CURE1 multi-robot exploration code](https://github.com/NKU-MobFly-Robotics/CURE1)
+
+The sections below describe this ROS2 port. For the original ROS1 usage notes and upstream issue discussions, please refer to the original LRAE repository.
+
+## Current Status
+
+- ROS2 Humble port of the core LRAE simulation, mapping, exploration, and local-planning pipeline.
+- Ranger Mini is the default and recommended simulation vehicle.
+- Scout V2 remains available for compatibility and comparison.
+- Scene 1 to Scene 4 use ROS2 Python launch files.
+- The simulation launch files start Gazebo, vehicle spawning, simulated SLAM output, `map_generator_node`, static TF publishers, traversability mapping, and RViz.
+- The exploration launch files start `lrae_planner_node`, `exploration_map_merge`, `gen_local_goal_node`, `localPlanner`, `pathFollower`, and the local-planner TF.
+
+This workspace has been organized for ROS2, but you should still verify your own machine with `colcon build` and the topic checks below because Gazebo plugins, controller packages, and model paths are environment-sensitive.
 
 ## Tested Environment
 
@@ -27,13 +42,15 @@ If this project is useful to your research, please cite the paper and star the c
 
 ## Packages
 
-- `fitplane`: traversability mapping, Gazebo world launch files, and RViz startup
+- `fitplane`: traversability mapping and simulation launch files
 - `sensor_conversion`: simulated SLAM output, odometry conversion, and point-cloud preprocessing
 - `lrae_planner`: exploration planner and global map merge
 - `local_planner`: local planner and path follower
 - `gen_local_goal`: conversion from global exploration paths to local goals
 - `simworld`: Gazebo worlds, models, and RViz configuration
-- `scout_description`, `scout_gazebo_sim`: Scout robot model and Gazebo spawning
+- `ranger/ranger_mini`: Ranger Mini model, Velodyne setup, Gazebo spawning, and ros2_control configuration
+- `ranger/four_ws_control`: command conversion from `/cmd_vel` to four-wheel steering and wheel velocity commands
+- `scout_description`, `scout_gazebo_sim`: optional Scout V2 model and Gazebo spawning
 
 ## Dependencies
 
@@ -45,6 +62,8 @@ sudo apt install \
   ros-humble-desktop \
   ros-humble-gazebo-ros-pkgs \
   ros-humble-gazebo-ros2-control \
+  ros-humble-ros2-control \
+  ros-humble-ros2-controllers \
   ros-humble-pcl-ros \
   ros-humble-pcl-conversions \
   ros-humble-tf2-ros \
@@ -85,21 +104,21 @@ If you changed CMake options or Eigen-related settings, rebuild the affected pac
 
 ```bash
 source /opt/ros/humble/setup.bash
-colcon build --packages-select lrae_planner fitplane local_planner sensor_conversion gen_local_goal --cmake-clean-cache
+colcon build --packages-select lrae_planner fitplane local_planner sensor_conversion gen_local_goal ranger_mini four_ws_control --cmake-clean-cache
 source install/setup.bash
 ```
 
 ## Run LRAE In Simulation
 
-Open two terminals.
+Open two terminals. Ranger Mini is the default and recommended vehicle.
 
-Terminal 1 starts Gazebo, Scout V2, simulated SLAM output, traversability mapping, and RViz:
+Terminal 1 starts Gazebo, vehicle spawning, simulated SLAM output, mapping, traversability analysis, and RViz:
 
 ```bash
 cd ~/LRAE_WS_Scout
 source /opt/ros/humble/setup.bash
 source install/setup.bash
-ros2 launch fitplane simulation_scene1.py
+ros2 launch fitplane simulation_scene1.py vehicle:=ranger
 ```
 
 Terminal 2 starts exploration planning and local planning:
@@ -113,6 +132,33 @@ ros2 launch lrae_planner exploration_scene1.py
 
 After the system starts successfully, RViz should show the red route path, purple exploration path, green local path, traversability point cloud, and the robot moving through the scene.
 
+To run the legacy Scout V2 model instead:
+
+```bash
+ros2 launch fitplane simulation_scene1.py vehicle:=scout
+```
+
+## Vehicle Selection
+
+All simulation scene launch files accept the same vehicle selector:
+
+```bash
+vehicle:=ranger
+vehicle:=scout
+```
+
+Ranger Mini is recommended for current experiments:
+
+- It uses Gazebo `ros2_control` with steering position controllers and wheel velocity controllers.
+- `four_ws_control/robot_control.py` subscribes to `/cmd_vel` and publishes steering and wheel commands.
+- It supports opposite-phase steering, in-phase steering, and pivot turning.
+- It includes a simulated Velodyne HDL-32E and a p3d odometry plugin remapped to `/base_pose_ground_truth`.
+
+Scout V2 is kept for comparison and compatibility:
+
+- It uses the Gazebo diff-drive plugin and subscribes directly to `/cmd_vel`.
+- It is a skid-steering approximation, so motion can be less accurate on uneven terrain because turning depends on contact friction, lateral tire slip, solver settings, wheel collision geometry, and real-time factor.
+
 ## Run Different Scenes
 
 The original project provides multiple simulation scenes with different terrain characteristics and sizes.
@@ -122,25 +168,51 @@ The original project provides multiple simulation scenes with different terrain 
   <img src="image/s2.png" width="360" />
 </p>
 
-Scene 1 has ROS2 Python launch files:
+Start the matching simulation launch in one terminal and the matching exploration launch in another terminal.
+
+Scene 1:
 
 ```bash
-ros2 launch fitplane simulation_scene1.py
+ros2 launch fitplane simulation_scene1.py vehicle:=ranger
 ros2 launch lrae_planner exploration_scene1.py
 ```
 
-Scene 2 to Scene 4 use ROS2 XML launch files on the simulation side and matching planner launch files:
+Scene 2:
 
 ```bash
-ros2 launch fitplane simulation_scene2.launch
+ros2 launch fitplane simulation_scene2.py vehicle:=ranger
 ros2 launch lrae_planner exploration_scene2.py
+```
 
-ros2 launch fitplane simulation_scene3.launch
-ros2 launch lrae_planner exploration_scene3.launch
+Scene 3:
 
-ros2 launch fitplane simulation_scene4.launch
+```bash
+ros2 launch fitplane simulation_scene3.py vehicle:=ranger
+ros2 launch lrae_planner exploration_scene3.py
+```
+
+Scene 4:
+
+```bash
+ros2 launch fitplane simulation_scene4.py vehicle:=ranger
 ros2 launch lrae_planner exploration_scene4.py
 ```
+
+If no `vehicle` argument is specified, Ranger is used.
+
+| Scene | Simulation launch | Exploration launch | Gazebo world | Initial pose `(x, y, z)` |
+| --- | --- | --- | --- | --- |
+| 1 | `simulation_scene1.py` | `exploration_scene1.py` | `map_scene_1.world` | `(-14, -14, 0.3)` |
+| 2 | `simulation_scene2.py` | `exploration_scene2.py` | `map_scene_2.world` | `(-27, -27, 0.3)` |
+| 3 | `simulation_scene3.py` | `exploration_scene3.py` | `map_scene_3.world` | `(-18, -20, 0.5)` |
+| 4 | `simulation_scene4.py` | `exploration_scene4.py` | `map_scene_4.world` | `(0.0, 0.0, 0.5)` |
+
+Scene-specific planner parameters are aligned with the original ROS1 launch files:
+
+- Scene 1 uses `angle_pen=0.45`, `update_cen_thre=6`, `unknown_num_thre=200`, `minrange=20.0`, and a `216 x 216` exploration map.
+- Scene 2 enables `limit_max_square` and `use_go_end_nearest`, with `end_neacen_disthre=10.0`, `end_cur_disrate=2.0`, and a `216 x 216` exploration map.
+- Scene 3 uses `update_cen_thre=1`, `unknown_num_thre=300`, `minrange=30.0`, and a `216 x 216` exploration map.
+- Scene 4 uses `angle_pen=0.1`, `update_cen_thre=1`, `unknown_num_thre=300`, `minrange=30.0`, and a `316 x 316` exploration map.
 
 ## Run LRAE In New Scenes
 
@@ -213,11 +285,11 @@ Notes:
 
 1. If the robot repeatedly explores tiny unknown regions, increase `unknown_num_thre` appropriately.
 2. Because the Gazebo real-time factor is not always 1, use ROS time instead of wall-clock time to measure exploration time.
-3. Exploration performance depends on traversability analysis and localization accuracy. If exploration is incomplete, first check whether the traversability map is correct, then tune traversability parameters for the scene. The algorithm is mainly designed for continuous rough terrain and has not been tested extensively on discrete terrain such as cliffs or steps.
+3. Exploration performance depends on traversability analysis and localization accuracy. If exploration is incomplete, first check whether the traversability map is correct, then tune traversability parameters for the scene.
 
 ## Expected Topics And TF
 
-After `simulation_scene1.py` starts, verify the simulation side:
+After a simulation launch starts, verify the simulation side:
 
 ```bash
 ros2 topic hz /velodyne_points
@@ -243,6 +315,12 @@ Expected TF chain:
 
 ```text
 world -> map -> sensor -> base_link -> velodyne_base_link -> velodyne
+```
+
+For Ranger planning, the local planner also uses:
+
+```text
+sensor -> vehicle
 ```
 
 ## RViz Point Cloud Display
@@ -278,9 +356,9 @@ ros2 run tf2_ros tf2_echo map base_link
 
 Fixes:
 
-- Start `fitplane simulation_scene1.py` before `lrae_planner exploration_scene1.py`.
+- Start the `fitplane` simulation launch before the `lrae_planner` exploration launch.
 - Make sure `/velodyne_points` and `/base_pose_ground_truth` both publish data.
-- Make sure `slam_sim_output` is running.
+- Make sure `slam_sim_output` and `map_generator_node` are running.
 - Make sure the `sensor_baselink` static transform is running.
 
 ### `/velodyne_points` Has No Publisher
@@ -339,9 +417,7 @@ Example:
 Entity pushed to spawn queue, but spawn service timed out waiting for entity to appear
 ```
 
-If Gazebo later prints `Velodyne laser plugin ready` and `diff_drive: Subscribed to [/cmd_vel]`, the entity was likely inserted slowly and the Python spawner returned too early. This port increases the `spawn_entity.py` timeout in `scout_v2_empty_world.launch.py`.
-
-If the entity already exists from a previous run, fully stop Gazebo before restarting:
+If Gazebo later prints that the Velodyne plugin and drive/controller plugins are ready, the entity was likely inserted slowly and the Python spawner returned too early. Stop Gazebo fully before restarting:
 
 ```bash
 pkill -f gzserver
@@ -417,4 +493,4 @@ If you use this project in your research, please cite:
 
 ## Acknowledgements
 
-We sincerely appreciate the following open-source projects: [FAEL](https://github.com/SYSU-RoboticsLab/FAEL), [TARE](https://github.com/caochao39/tare_planner), [PUTN](https://github.com/jianzhuozhuTHU/putn), Ji Zhang's [local_planner](https://github.com/jizhang-cmu/ground_based_autonomy_basic/tree/noetic/src/local_planner), Scout simulation, Gazebo, Velodyne simulation, PCL, TF2, and ROS2 Navigation-related tooling.
+We sincerely appreciate the following open-source projects: [LRAE](https://github.com/NKU-MobFly-Robotics/LRAE), [FAEL](https://github.com/SYSU-RoboticsLab/FAEL), [TARE](https://github.com/caochao39/tare_planner), [PUTN](https://github.com/jianzhuozhuTHU/putn), Ji Zhang's [local_planner](https://github.com/jizhang-cmu/ground_based_autonomy_basic/tree/noetic/src/local_planner), Scout simulation, Gazebo, Velodyne simulation, PCL, TF2, and ROS2 Navigation-related tooling.
